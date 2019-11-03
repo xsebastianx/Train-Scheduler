@@ -2,13 +2,80 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Train Scheduler</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
         <sript src="https://code.jquery.com/jquery-3.4.1.min.js"></sript>
         <script> src="assets/javascript/app.js"</script>
+        <script> src="https://momentjs.com/downloads/moment.js"</script>
     </head>
     <body>
+        <div class="container">
+            <div class="jumbotron text-center bg-success text-white">
+                <h1>I Like Trains</h1>
+            </div>
+            
+                    <!-- "Current Train Schedule" Table -->
+            
+            <div class="panel panel-success text-success">
+                <div class="panel-heading"><h3>Current Train Schedule</h3></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequency(min)</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+            
+                                <!-- Train info goes here! -->
+                        <tbody id="add-row">
+                        </tbody>
+                                
+                    </table>
+                </div>
+            </div>
+            
+                    <!-- Form for adding a new train -->
+            
+             <div class="panel panel-success text-success">
+                <div class="panel-heading">
+                    <h3>Add Train</h3>
+                </div>
+            
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="text">Train Name</label>
+                            <input type="text" class="form-control" id="train-name">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="text">Destination</label>
+                            <input type="text" class="form-control" id="destination">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="text">First Train Time (HH:MM - Military Time)</label>
+                            <input type="text" class="form-control" id="first-train">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="text">Frequency(min)</label>
+                            <input type="text" class="form-control" id="frequency">
+                        </div>
+            
+                            <button type="submit" id="add-train" class="btn btn-success" id="addTrain">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
     </body>
