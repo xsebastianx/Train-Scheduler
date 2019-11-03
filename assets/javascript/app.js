@@ -7,7 +7,7 @@ $(document).ready(function(){
         storageBucket: "train-scheduler-afc95.appspot.com",
         messagingSenderId: "831922905088",
         appId: "1:831922905088:web:3b25cd6339aef9ac2eb8e5"
-    }
+    };
     firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
